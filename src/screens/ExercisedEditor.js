@@ -4,7 +4,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useRoutineEditor } from '../hooks/useRoutineEditor';
 import { Colors, getBlockColor } from '../theme/theme';
-import ActionButton from '../components/ActionButon'; // Supongamos que ya lo moviste
+import ActionButton from '../components/ActionButon'; 
+import '../i18n'
 
 export default function ExerciseEditor({ route, navigation }) {
   const { t } = useTranslation();
@@ -40,7 +41,7 @@ export default function ExerciseEditor({ route, navigation }) {
           </View>
           
           <TextInput 
-            placeholder={t('training.block_title_placeholder')} 
+            placeholder={t('training.title')} 
             style={styles.titleInput}
             placeholderTextColor={Colors.placeholder}
           />
@@ -53,7 +54,7 @@ export default function ExerciseEditor({ route, navigation }) {
         <Text style={styles.addLabel}>{t('training.add_block_label')}</Text>
         <View style={styles.buttonRow}>
           <ActionButton 
-            label={t('training.fuerza')} 
+            label={t('training.strength')} 
             color={Colors.fuerza} 
             onPress={() => addBlock('Fuerza')} 
           />

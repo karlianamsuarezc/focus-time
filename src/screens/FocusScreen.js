@@ -1,8 +1,9 @@
 import React from 'react';
 import { SafeAreaView, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useTranslation } from 'react-i18next';
 import { useTimer } from '../hooks/useTimer';
 import { Colors } from '../theme/theme';
+import { useTranslation } from 'react-i18next';
+import '../i18n';
 
 // Helper externo (no se redeclara)
 const formatTime = (sec) => {
