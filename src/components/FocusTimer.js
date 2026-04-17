@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, Vibration } from 'react-native';
+import '../../i18n';
 
 const FocusTimer = () => {
   const [seconds, setSeconds] = useState(25 * 60);
@@ -36,7 +37,7 @@ const FocusTimer = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Karli's Focus Timer</Text>
+        <Text style={styles.title}>{t('timer.title')}</Text>
       </View>
 
         <View style={styles.ringOuter}> 
@@ -47,10 +48,10 @@ const FocusTimer = () => {
 
       <View style={styles.buttonGroup}>
         <TouchableOpacity style={styles.buttonSecondary} onPress={() => resetTimer(25)}>
-          <Text style={styles.buttonText}>Focus</Text>
+          <Text style={styles.buttonText}>{t('timer.focus')}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonSecondary} onPress={() => resetTimer(5)}>
-          <Text style={styles.buttonText}>Break</Text>
+          <Text style={styles.buttonText}>{t('timer.break')}</Text>
         </TouchableOpacity>
       </View>
 

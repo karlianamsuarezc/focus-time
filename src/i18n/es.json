@@ -1,0 +1,34 @@
+{
+    "common": {
+      "save": "GUARDAR",
+      "back": "Volver",
+      "next": "Siguiente",
+      "yes": "Sí",
+    "no": "No"
+
+    },
+    "timer": {
+      "title": "KARLI'S FOCUS TIMER",
+      "start": "START",
+      "focus": "Focus",
+      "break": "Break"
+    },
+    "training": {
+    "title_screen": "KARLI'S TRAINING",
+      "dashboard_title": "MI RUTINA SEMANAL",
+      "editor_title": "Detalles del Entrenamiento",
+      "add_block_label": "Añadir bloque de:",
+      "rest_day_confirm": "¿Confirmas que hoy es día de descanso?",
+      "rest_day_opcion": "Marcar como día de descanso",
+      "generate_schedule": "GENERAR HORARIO",
+      "strenth": "Fuerza",
+      "gym": "Gimnasia",
+      "cardio": "Cardio",
+      "title": "Título del bloque (ej: Strict Press o Metcon)",
+      "weightlifting" : "Levantamiento de pesas"
+    },
+    "routine":{
+        "title": "¿Cómo entrenamos hoy?",
+        "next_routine":"Siguiente: Anotar Rutina"
+    }
+  }
