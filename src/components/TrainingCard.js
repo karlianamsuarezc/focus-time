@@ -3,8 +3,7 @@ import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Colors } from '../theme/theme';
 
-const TrainingCard = ({ name, type, subtitle, onPress }) => {
-  const isRest = type === 'Rest Day';
+const TrainingCard = ({ name, type, subtitle, isRest, onPress }) => {
   
   return (
     <TouchableOpacity style={styles.card} onPress={onPress}>

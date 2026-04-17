@@ -25,7 +25,11 @@
       "gym": "Gimnasia",
       "cardio": "Cardio",
       "title": "Título del bloque (ej: Strict Press o Metcon)",
-      "weightlifting" : "Levantamiento de pesas"
+      "weightlifting" : "Levantamiento de pesas",
+      "strength_title_placeholder": "Ej: Strict Press o Metcon",
+      "gym_title_placeholder": "Ej: Dead hang o Pull up",
+      "cardio_title_placeholder": "Ej: 400m run o 20 cal rower",
+      "add_row": "Añadir bloque"
     },
     "routine":{
         "title": "¿Cómo entrenamos hoy?",

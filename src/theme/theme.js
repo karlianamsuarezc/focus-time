@@ -18,9 +18,9 @@ export const Colors = {
   
   export const getBlockColor = (type) => {
     switch (type) {
-      case 'Fuerza': return Colors.fuerza;
-      case 'Gymnastics': return Colors.gym;
-      case 'Cardio': return Colors.cardio;
+      case 'strength': return Colors.fuerza;
+      case 'gym': return Colors.gym;
+      case 'cardio': return Colors.cardio;
       default: return Colors.border;
     }
   };

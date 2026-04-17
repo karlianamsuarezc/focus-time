@@ -4,14 +4,33 @@ import { useTranslation } from 'react-i18next';
 import { Colors } from '../theme/theme';
 import SelectableBlock from '../components/SelectableBlock';
 
-export default function RoutineConfig({ navigation }) {
+export default function RoutineConfig({ navigation, route }) {
   const { t } = useTranslation();
+  const { dayId } = route.params;
   
   const [blocks, setBlocks] = useState({
-    weightlifting: false,
-    gymnastics: false,
+    strength: false,
+    gym: false,
     cardio: false,
+    isRestDay: false,
   });
+
+  const handleNext = () => {
+    if (blocks.isRestDay) {
+      // Si es descanso, volvemos al dashboard avisando el cambio
+      // En una app real aquí guardarías en AsyncStorage
+      navigation.navigate('Dashboard', { 
+      updatedDay: dayId, // o 'day' si usas el nombre
+      status: 'rest' 
+    });
+    } else {
+      // Pasamos solo lo que se seleccionó
+      navigation.navigate('ExerciseEditor', { 
+        selectedBlocks: blocks,
+        dayId: dayId 
+      });
+    }
+  };
 
   const toggleBlock = (key) => {
     setBlocks(prev => ({ ...prev, [key]: !prev[key] }));
@@ -24,14 +43,14 @@ export default function RoutineConfig({ navigation }) {
         
         <SelectableBlock 
           label={t('training.weightlifting')} 
-          isActive={blocks.weightlifting} 
-          onPress={() => toggleBlock('weightlifting')} 
+          isActive={blocks.strength} 
+          onPress={() => toggleBlock('strength')} 
         />
 
         <SelectableBlock 
           label={t('training.gym')} 
-          isActive={blocks.gymnastics} 
-          onPress={() => toggleBlock('gymnastics')} 
+          isActive={blocks.gym} 
+          onPress={() => toggleBlock('gym')} 
         />
 
         <SelectableBlock 
@@ -40,9 +59,15 @@ export default function RoutineConfig({ navigation }) {
           onPress={() => toggleBlock('cardio')} 
         />
 
+        <SelectableBlock 
+          label={t('training.rest_day_option')} 
+          isActive={blocks.isRestDay} 
+          onPress={() => setBlocks({ strength: false, gym: false, cardio: false, isRestDay: !blocks.isRestDay })} 
+        />
+
         <TouchableOpacity 
           style={styles.nextButton}
-          onPress={() => navigation.navigate('ExerciseEditor', { selectedBlocks: blocks })}
+          onPress={handleNext}
         >
           <Text style={styles.nextText}>{t('routine.next_routine')}</Text>
         </TouchableOpacity>
